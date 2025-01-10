@@ -1,0 +1,43 @@
+.watch-anywhere {
+    padding: 5.6vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    img {
+        max-width: 100%;
+    }
+
+    .watch-anywhere__text_container {
+        padding: 0 2vw;
+
+        h2 {
+            margin-bottom: 24px;
+        }
+    }
+
+}
+
+.walpaper {
+    padding: 5.6vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vw;
+    width: 100%;
+    background-image: url('/src/images/reliquia2.jpg'), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    background-blend-mode: overlay; /* Combina a imagem com o gradiente */
+    background-size: cover;
+    background-position: center;
+
+.watch-anywhere__text_container__walpaper {
+    float: right;
+    display: flex;
+
+    p {
+        width: calc(100% - 5.6vw);
+    }
+    h2 {
+        margin-bottom: 24px;
+    }
+}

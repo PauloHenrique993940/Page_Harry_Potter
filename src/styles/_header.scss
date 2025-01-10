@@ -1,0 +1,164 @@
+@use "_variaveis" as *;
+
+.header {
+    margin-bottom: 8px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: $corDeFundo;
+    transition: background-color .5s ease;
+    z-index: 1;
+
+    &--is-hidden {
+        background-color: transparent;
+
+        .header {
+
+            &__logo,
+            &__links__item:first-child {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        .header__logo {
+            opacity: 0;
+        }
+
+        .header__links__item:first-child {
+            opacity: 0;
+
+        }
+    }
+}
+
+.header__container {
+    display: flex;
+    padding: 8px 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__container__logo {
+    max-width: 100px;
+    width: 100%;
+    margin: 5px;
+    transition: opacity .5s ease;
+}
+
+.header__links {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    background-color: #040714;
+    color: $corTextoSecundario;
+    border: 1px solid $codTextoPrincipal;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+
+}
+
+.dark {
+    background-color: rgba($color: #000, $alpha: 0.8);
+    border-color: $corTextoSecundario;
+
+}
+
+.button:hover {
+    background-color: rgb(187, 184, 184);
+    color: #000000;
+}
+
+.button__event {
+    background-color: #ffd700;
+}
+
+.button__event:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.header__links__item {
+    transition: opacity .5s ease;
+}
+
+
+@media (max-width: 320px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+    }
+
+    .header__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .button__event {
+        background-color: $corFundoButtonCombos;
+        width: 150px;
+        padding: 0;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .header__container__logo {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .header__container {
+        display: flex;
+        padding: 8px 30px;
+        align-items: center;
+    }
+}
+
+.harry-potter {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px #ffd700,
+        /* Dourado */
+        0 0 30px #ffd700,
+        0 0 40px #ffd700,
+        0 0 50px #ffd700;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow:
+            0 0 10px #fff,
+            0 0 20px #ffd700,
+            0 0 30px #ffd700,
+            0 0 40px #ffd700;
+    }
+
+    to {
+        text-shadow:
+            0 0 20px #fff,
+            0 0 30px #ffd700,
+            0 0 40px #ffd700,
+            0 0 50px #ffd700;
+    }
+}

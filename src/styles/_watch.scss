@@ -25,11 +25,11 @@
     align-items: center;
     height: 60vw;
     width: 100%;
-    background-image: url('/src/images/reliquia2.jpg'), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    background-image: linear-gradient(rgba(0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/src/images/capa-22.jpg');
     background-blend-mode: overlay; /* Combina a imagem com o gradiente */
     background-size: cover;
     background-position: center;
-
+}
 .watch-anywhere__text_container__walpaper {
     float: right;
     display: flex;

@@ -1,32 +1,28 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass')(import('sass'));
-const imagemin = require('gulp-imagemin'); // Certifique-se de instalar o gulp-imagemin: npm install gulp-imagemin --save-dev
+import gulp from 'gulp';
+import sass from 'gulp-sass';
+import dartSass from 'sass';
+import imagemin from 'gulp-imagemin';
 
-function styles(){
+sass.compiler = dartSass;
+
+// Função para processar arquivos SCSS
+function styles() {
+    return gulp.src('./src/styles/**/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('./dist/styles'));
+}
+
+// Função para otimizar imagens
+function images() {
     return gulp.src('./src/images/**/*')
-    .pipe(imagemin()) // Adicione o "."
-    .pipe(gulp.dest('./dist/images'));
-
+        .pipe(imagemin())
+        .pipe(gulp.dest('./dist/images'));
 }
 
-function images(){
-    return gulp.src('./src/images/**/*')
-    pipe(imagemin())
-    .pipe(gulp.dest('./dist/images'));
+// Tarefa padrão com watch
+function defaultTask() {
+    gulp.watch('./src/styles/**/*.scss', styles);
+    gulp.watch('./src/images/**/*', images);
 }
 
-
-
-
-
-
-
-
-
-
-
-exports.default = gulp.parallel(styles, images, scripts);
-exports.watch = function() {
-    gulp.watch('./src/styles/*.scsss',  gulp.parallel(styles))
-    gulp.watch('./src/scripts/*.js', gulp.parallel(scripts))
-}
+export { styles, images, defaultTask as default };

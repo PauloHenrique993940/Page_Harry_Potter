@@ -1,13 +1,13 @@
-@use 'variaveis';
-@use 'hero';
-@use 'header';
-@use 'shows';
-@use 'plans';
-@use 'reset';
-@use 'watch';
-@use 'dispositivos';
-@use 'faq';
-@use 'footer';
+@import 'variaveis';
+@import 'hero';
+@import 'header';
+@import 'shows';
+@import 'plans';
+@import 'reset';
+@import 'watch';
+@import 'dispositivos';
+@import 'faq';
+@import 'footer';
 
 
 @font-face {

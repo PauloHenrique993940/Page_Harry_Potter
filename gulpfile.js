@@ -1,4 +1,4 @@
-const gulp = require('gulp');
+const gulp = require('gulp')(require('gulp'));
 const imagemin = require('gulp-imagemin'); // Importa corretamente o gulp-imagemin
 const sass = require('gulp-sass')(require('sass')); // Importa o gulp-sass
 const uglify = require('gulp-uglify'); // Importa o gulp-uglify

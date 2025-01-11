@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
+const sass = require('gulp-sass')(import('sass'));
 const imagemin = require('gulp-imagemin'); // Certifique-se de instalar o gulp-imagemin: npm install gulp-imagemin --save-dev
 
 function styles(){
